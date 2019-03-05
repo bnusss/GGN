@@ -5,7 +5,7 @@ This repository will contain the official PyTorch implementation of:
 
 **A General Deep Learning Framework for Network Reconstruction.**<br>
 Zhang Zhang, Yi Zhao, Jing Liu, Shuo Wang, Ruyue Xin and Jiang Zhang<sup>\*</sup>(<sup>\*</sup>: Corresponding author) <br>
-The arxiv address will be made public at Tue, 5 Mar 2019.<br>
+[https://arxiv.org/abs/1812.11482v2](https://arxiv.org/abs/1812.11482v2)<br>
 
 <img src="./img/threekindofsys.png" width="800px" alt="">
 

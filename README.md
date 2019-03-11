@@ -44,9 +44,9 @@ python train_cml_kuramoto.py
 If you use this code in your own work, please cite our paper:
 ```
 @article{kipf2018neural,
-  title={Neural Relational Inference for Interacting Systems},
-  author={Kipf, Thomas and Fetaya, Ethan and Wang, Kuan-Chieh and Welling, Max and Zemel, Richard},
-  journal={arXiv preprint arXiv:1802.04687},
-  year={2018}
+  title={A General Deep Learning Framework for Network Reconstruction},
+  author={Zhang, Zhang and Zhao, Yi and Liu, jing and Wang, Shuo and Xin, Ru-Yue and Zhang, Jiang},
+  journal={arXiv preprint arXiv:1812.11482},
+  year={2019}
 }
 ```

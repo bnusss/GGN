@@ -36,7 +36,9 @@ python train_bn.py
 
 To replicate the experiment for Coupled Map Lattice and Kuramoto model, please run the train_cml_kuramoto.py
 ```
-python train_cml_kuramoto.py
+python train_cml_kuramoto.py --simulation-type cml --dims 1 --skip 0
+or
+python train_cml_kuramoto.py --simulation-type kuramoto --dims 2 --skip 1
 ```
 
 

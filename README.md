@@ -43,7 +43,7 @@ python train_cml_kuramoto.py
 ### Cite
 If you use this code in your own work, please cite our paper:
 ```
-@article{kipf2018neural,
+@article{zhang2019a,
   title={A General Deep Learning Framework for Network Reconstruction},
   author={Zhang, Zhang and Zhao, Yi and Liu, jing and Wang, Shuo and Xin, Ru-Yue and Zhang, Jiang},
   journal={arXiv preprint arXiv:1812.11482},

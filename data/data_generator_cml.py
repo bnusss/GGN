@@ -10,13 +10,13 @@ np.random.seed(2050)
 torch.manual_seed(2050)
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--nodes', type=int, default=10, help='Number of nodes, default=10')
-parser.add_argument('--samples', type=int, default=7000, help='Number of samples in simulation, default=7000')
+parser.add_argument('--nodes', type=int, default=100, help='Number of nodes, default=10')
+parser.add_argument('--samples', type=int, default=700, help='Number of samples in simulation, default=7000')
 parser.add_argument('--prediction-steps', type=int, default=10, help='prediction steps, default=10')
 parser.add_argument('--evolving-steps', type=int, default=100, help='evolving steps, default=100')
-parser.add_argument('--lambd', type=float, default=3.6, help='lambda in logistic map, default=3.6')
+parser.add_argument('--lambd', type=float, default=3.5, help='lambda in logistic map, default=3.6')
 parser.add_argument('--coupling', type=float, default=0.2, help='coupling coefficent, default=0.2')
-parser.add_argument('--data-name', type=str, default='./cml/data_lambd3.6_coupl0.2_node10.pickle', help='data name to save')
+parser.add_argument('--data-name', type=str, default='./cml/data_lambd3.5_coupl0.2_node100.pickle', help='data name to save')
 args = parser.parse_args()
 
 

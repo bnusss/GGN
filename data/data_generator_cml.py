@@ -5,6 +5,7 @@ import torch
 import numpy as np
 import pickle
 
+
 use_cuda = torch.cuda.is_available()
 np.random.seed(2050)
 torch.manual_seed(2050)

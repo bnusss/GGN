@@ -233,7 +233,6 @@ def load_cml_ggn(batch_size = 128):
     print('\nMatrix dimension: %s Train data size: %s Val data size: %s Test data size: %s'
           % (object_matrix.shape, train_data.shape, val_data.shape, test_data.shape))
 
-
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_data, batch_size=batch_size, shuffle=False)
     test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)

@@ -84,19 +84,32 @@ class GumbelGraphNetwork(nn.Module):
         self.output = torch.nn.Linear(input_size + hidden_size, input_size)
         
     def forward(self, x, adj,skip_conn=0):
+        # adj[batch,node,node]
+        # x[batch,node,dim]
         out = x
-        innode = out.unsqueeze(1).repeat(1, adj.size()[1], 1, 1)
-        outnode = innode.transpose(1, 2)
-        node2edge = F.relu(self.edge1(torch.cat((innode,outnode), 3)))
-        edge2edge = F.relu(self.edge2edge(node2edge))
-        adjs = adj.view(adj.size()[0], adj.size()[1], adj.size()[2], 1)
-        adjs = adjs.repeat(1, 1, 1, edge2edge.size()[3])
         
+        # innode [batch,node,node,dim]
+        innode = out.unsqueeze(1).repeat(1, adj.size()[1], 1, 1)
+        # outnode [batch,node,node,dim]
+        outnode = innode.transpose(1, 2)
+        # node2edge:[batch,node,node,2*dim->hidden]
+        node2edge = F.relu(self.edge1(torch.cat((innode,outnode), 3)))
+        # edge2edge:[batch,node,node,hidden]
+        edge2edge = F.relu(self.edge2edge(node2edge))
+        # adjs:[batch,node,node,1]
+        adjs = adj.view(adj.size()[0], adj.size()[1], adj.size()[2], 1)
+        # adjs:[batch,node,node,hidden]
+        adjs = adjs.repeat(1, 1, 1, edge2edge.size()[3])
+        # edges:[batch,node,node,hidden]
         edges = adjs * edge2edge
-        out = torch.sum(edges, 1)
+        # out:[batch,node,hid]
+        out = torch.sum(edges, 2)
+        # out:[batch,node,hid]
         out = F.relu(self.node2node(out))
         out = F.relu(self.node2node2(out))
+        # out:[batch,node,dim+hid]
         out = torch.cat((x, out), dim = -1)
+        # out:[batch,node,dim]
         out = self.output(out)
         if skip_conn == 1:
             out = out + x
